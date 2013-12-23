@@ -35,12 +35,10 @@
        		<!-- Logo, also links to the home page -->
             <a href="/"><img src="/images/aSkitterLogo.jpg" alt="Home Page"></a>
 
-            <!-- Tik Tok link, for logged in users -->
-            <?php if($user): ?>
+            <!-- Tik Tok link, for all users -->
                 <div class="tiktok-button">
                     <a href="/tiktok.php"><img src="/images/tiktok-btn.png" alt="Tik Tok"></a>
                 </div>
-            <?php endif; ?>
 
        		<!-- Welcome Message for logged in users -->
         	<?php if($user): ?>
