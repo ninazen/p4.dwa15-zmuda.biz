@@ -1,0 +1,450 @@
+/* 
+    Document   : tiktok.css
+    Author     : Nina Zmuda
+    Class      : CSCE-15 Project 4
+    Description: Style sheets for tiktok program
+*/
+
+/********** GLOBALS **********/
+
+body {
+    background-color: white;
+    color: black;
+    font-family: arial;
+}
+
+h1 {
+    text-align: center;
+    color: black;
+    font-size: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: Helvetica;
+}
+
+h2 {
+    text-align: center;
+    color: gray;
+    font-size: 14px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+h3 {
+    text-align: center;
+}
+
+/********** IDS **********/
+
+/* The main wrapper */
+#wrapper {
+    width: 1000px;
+    margin: 10px auto;
+    border-radius: 10px;
+    background-color: white;
+}
+
+/* The timers area */
+#timers {
+    height: 400px;
+    width: 1000px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+/* The forms area */
+#forms {
+    height: 400px;
+    width: 1000px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+/* The buttons area */
+#buttons {
+    height: 100px;
+    width: 1000px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+/* The welcome message */
+#welcome-msg {
+    position: absolute;
+    font-family: "Comic Sans MS";
+    font-size: 24px;
+    text-align: center;
+    color: #66FF99;
+    background-color: transparent;
+    font-weight: normal;
+    text-align: center;
+    height: 100px;
+    width: 440px;
+    margin-top: 100px;
+    margin-left: 280px;
+}
+
+/* The start timer countdown */
+#start-timer {
+    position: absolute;
+    font-size: 100px;
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+    background-color: transparent;
+    font-weight: bold;
+    text-align: center;
+    height: 100px;
+    width: 240px;
+    margin-top: 110px;
+    margin-left: 380px;
+}
+
+/* The break timer countdown */
+#break-timer {
+    position: absolute;
+    font-size: 100px;
+    text-align: center;
+    color: #330000;
+    margin-bottom: 20px;
+    background-color: transparent;
+    font-weight: bold;
+    text-align: center;
+    height: 100px;
+    width: 240px;
+    margin-top: 130px;
+    margin-left: 380px;
+}
+
+/* The timer buttons area */
+#timer-buttons {
+    margin-right: 50px;
+    margin-left: 50px;
+    text-align: center;
+    height: 80px;
+    margin-top: 2px;
+}
+
+/* The info buttons area */
+#info-buttons {
+    position:absolute;
+    margin-right: 0px;
+    margin-left: 0px;
+    text-align: center;
+    height: 80px;
+    margin-top: -48px;
+}
+
+/* The form buttons area */
+#form-buttons {
+    position:absolute;
+    margin-right: 0px;
+    margin-left: 738px;
+    text-align: center;
+    height: 80px;
+    margin-top: -48px;
+}
+
+/* The footer area */
+#footer {
+    clear:both;
+}
+
+/********** CLASSES **********/
+
+/* The Pomodoro Technique title */
+.pt-title {
+    margin-top: 2px;
+    margin-left: 10px;
+    font-family: cursive, sans-serif;
+    line-height: 120%;
+    font-size: 32px;
+    color: #66FF00;
+}
+
+/* The Start a Pom button */
+.button-pom {
+    background-color: #3366FF;
+    color: white;
+    font-family: arial;
+    border-radius: 5px;
+    font-size: 24px;
+    height: 60px;
+    width: 240px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+/* The Take a Break button */
+.button-break {
+    background-color: #006633;
+    color: white;
+    font-family: arial;
+    border-radius: 5px;
+    font-size: 24px;
+    height: 60px;
+    width: 240px;
+    margin-left: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+/* The global nav buttons */
+.info-button-link {
+    background-color: #CCFFE0;
+    color: #909090;
+    font-family: arial;
+    border-radius: 5px;
+    font-size: 16px;
+    height: 25px;
+    width: auto;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+/* The global form buttons */
+.form-button-link {
+    background-color: #99FFFF;
+    color: #909090;
+    font-family: arial;
+    border-radius: 5px;
+    font-size: 16px;
+    height: 25px;
+    width: auto;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+
+/* The Pom informational page */
+.pom-info-page {
+    height: 150px;
+    margin-top: -575px;
+}
+
+/* The Pomodoro Technique informational page */
+.pt-info-page {
+    height: 185px;
+    margin-top: -415px;
+}
+
+/* The Break informational page */
+.break-info-page {
+    height: 150px;
+    margin-top: -220px;
+}
+
+/* The informational pages */
+.info-page {
+    position: absolute;
+    background-color: #FFFFCC;
+    color: #303030;
+    font-family: arial;
+    font-size: 16px;
+    text-align: center;
+    font-weight: normal;
+    border: 1px solid orange;
+    width: 240px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+}
+
+/* The To Do informational page */
+.todo-page {
+    height: 150px;
+    margin-top: -575px;
+}
+
+/* The Inventory informational page */
+.invent-page {
+    height: 185px;
+    margin-top: -415px;
+}
+
+/* The Records informational page */
+.records-page {
+    height: 150px;
+    margin-top: -220px;
+}
+
+/* The forms pages */
+.form-page {
+    position: absolute;
+    background-color: #FFFFCC;
+    color: #303030;
+    font-family: arial;
+    font-size: 16px;
+    text-align: center;
+    font-weight: normal;
+    border: 1px solid orange;
+    width: 240px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+}
+
+/* Text styles */
+
+.text-bold {
+   font-weight: bold;
+}
+
+.text-italic {
+   font-style: italic;
+}
+
+.text-field {
+    color: black;
+    font-size: 12px;
+    background-color: white;
+    border: 1px solid orange;
+}
+
+/* Tik Tok logo image */
+.logo {
+    background: url("../images/tiktok-logo-gold.png");
+    background-repeat:no-repeat;
+    background-position:center top;
+    height: 70px;
+    width: 1000px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    display: inline-block;
+    margin:0 auto;
+}
+
+/* The aSkitter button - for navigation to aSkitter page */
+.askitter-button {
+    position: absolute;
+    width: 60px;
+    margin-top: -58px;
+    margin-bottom: 10px;
+    margin-left: 320px;
+    margin-right: 10px;
+    padding-left: 0px;
+    padding-right: 5px;
+    padding-top: 15px;
+}
+
+/* Java image */
+.java-timer {
+    background: url("../images/java.png");
+    background-repeat:no-repeat;
+    background-position:center top;
+    height: 400px;
+    width: 1000px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+    margin:0 auto;
+}
+
+/* Pomodoro image */
+.pom-timer {
+    background: url("../images/pomo.png");
+    background-repeat:no-repeat;
+    background-position:center top;
+    height: 400px;
+    width: 1000px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+    margin:0 auto;
+}
+
+/* Countdown time shown on top of the buttons */
+.time-select {
+    position: absolute;
+    border: 0px;
+    font-size: 16px;
+    color: orange;
+    background-color: transparent;
+    font-weight: bold;
+    text-align: center;
+    height: 20px;
+    width: 30px;
+    margin-top: 42px;
+    margin-left: -32px;
+}
+
+/* The time selection slider bar */
+.time-slider {
+    margin-top: 1px;
+    margin-bottom: 5px;
+    width: 180px;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.clear {
+    clear:both;
+
+}
+.error {
+    color: red;
+}
+
+/* For Worksheet Forms */
+
+.activity {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* For Worksheet Forms */
+
+#todo-header {
+    width: 450px;
+    float: left;
+    color: black;
+}
+
+#right-side {
+    width: 450px;
+    float: left;
+    color: black;
+}
+
+#left-side {
+    width: 450px;
+    float: left;
+    color: black;
+}
+
+#todo-form {
+    border: 1px solid lightgray;
+    min-height: 350px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+#invent-form {
+    border: 1px solid lightgray;
+    min-height: 350px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+}
+
+#records-form {
+    border: 1px solid lightgray;
+    min-height: 350px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
