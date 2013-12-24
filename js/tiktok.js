@@ -129,6 +129,9 @@ function swapToInventForm() {
 	$('#todo-form').hide(); 
 	$('#invent-form').show(); 
 	$('#records-form').hide();
+
+	// Display the inventory list
+	loadInventory ();
 }
 
 // Function to Swap in the Records Form
@@ -456,7 +459,11 @@ $(document).ready(function() {
 
 	/* Clear Storage - Clear all activities in local storage */
 	$("#clear-storage").click(function() {
+
 		localStorage.clear();
+		
+		// Display the inventory list
+		loadInventory ();
 	});
 
 	/* Add Activity Function - Add a new activity to the Activity form */
@@ -465,24 +472,27 @@ $(document).ready(function() {
 		// Store an entry into the local storage table (see notes above for details on values)
 		var keystring = $('#activity-name').val();  // use activity name as the lookup key
 
-		// Value = "POM + Priority + Estimated + Actual + Status + ToDo + Inventory + Records"
-		// Note: Not all these values will be fully utilized in version 1
-		var valstring = "POM" + $('#activity-prio').val() + $('#activity-estim').val() + "00" + "111";
+		if (keystring == "") {
+			alert ("You need to enter an Activity Name! Priority and estimated POMs are optional.")
+		}
 
-		// Store it in local storage
-		localStorage.setItem(keystring, valstring);
+		else {
+			// Value = "POM + Priority + Estimated + Actual + Status + ToDo + Inventory + Records"
+			// Note: Not all these values will be fully utilized in version 1
+			var valstring = "POM" + $('#activity-prio').val() + $('#activity-estim').val() + "00" + "111";
 
-		// Add the activity to the list	
-		$('#activity-entries').append(activitiestring);
-		$('#inventory-list').append(
-	  		"<input type='text' size='5' maxlength='1' value='"+$('#activity-prio').val()+"' readonly>" +
-			"<input type='text' size='60' maxlength='60' value='"+keystring+"' readonly>" +
-			"<input type='text' size='10' maxlength='1' value='"+$('#activity-estim').val()+"' readonly><br>");
+			// Store it in local storage
+			localStorage.setItem(keystring, valstring);
 
-		// Clear the box for the next activity
-		$('#activity-prio').val("");
-		$('#activity-name').val("");
-		$('#activity-estim').val("1");
+			// Clear the box for the next activity
+			$('#activity-prio').val("");
+			$('#activity-name').val("");
+			$('#activity-estim').val("1");
+			$('#activity-prio').html("");
+
+			// Display the inventory list
+			loadInventory ();
+		}
 	});
 	
 	/* Strike Out - Function to strike out completed tasks */
@@ -501,6 +511,7 @@ $(document).ready(function() {
 	// Load ToDo - Load in To Do Today list from local storage
 	// Note: limiting to 10 entries for now
 	$('#load-todo').click(function() {
+		$('#todo-list').html("");
 		if (localStorage.length > 0) {
 			var storedValue;
 			for (var i = 0; (i < localStorage.length) && (i < 10); i++){
@@ -513,13 +524,18 @@ $(document).ready(function() {
 			  			"<input type='text' size='10' maxlength='1' value='"+storedValue[4]+"' readonly><br>");
 				}
 			}
-			$('#load-todo').hide();
 		}
+	});
+
+	$('#load-inventory').click(function() {
+		// Display the inventory list
+		loadInventory ();
 	});
 
 	// Load Inventory - Load in activity inventory from local storage 
 	// Note: limiting to 10 entries for now
-	$('#load-inventory').click(function() {
+	function loadInventory () {		
+		$('#inventory-list').html("");
 		if (localStorage.length > 0) {
 			var storedValue;
 			for (var i = 0; (i < localStorage.length) && (i < 10); i++){
@@ -532,13 +548,13 @@ $(document).ready(function() {
 			  			"<input type='text' size='10' maxlength='1' value='"+storedValue[4]+"' readonly><br>");
 				}
 			}
-			$('#load-inventory').hide();
 		}
-	});
+	};
 
 	// Load Records - Load in Records list from local storage
 	// Note: limiting to 10 entries for now
 	$('#load-records').click(function() {
+		$('#records-list').html("");
 		if (localStorage.length > 0) {
 			var storedValue;
 			for (var i = 0; (i < localStorage.length) && (i < 10); i++){
@@ -546,14 +562,13 @@ $(document).ready(function() {
 				storedValue = localStorage.getItem(localStorage.key(i));
 				if (storedValue[9] == '1'){
   		  			$('#records-list').append(
-	  		 			"<input type='text' size='5' maxlength='1' value='"+storedValue[1]+"' readonly> " +
 	  		 			"<input type='text' size='5' maxlength='1' value='"+storedValue[3]+"' readonly> " +
+	  		 			"<input type='text' size='5' maxlength='1' value='"+storedValue[5]+"' readonly> " +
 						"<input type='text' size='60' maxlength='60' value='"+localStorage.key(i)+"' readonly> " +
-			  			"<input type='text' size='10' maxlength='1' value='"+storedValue[2]+"' readonly> " +
-			  			"<input type='text' size='10' maxlength='1' value='"+storedValue[4]+"' readonly><br>");
+			  			"<input type='text' size='10' maxlength='1' value='"+storedValue[4]+"' readonly> " +
+			  			"<input type='text' size='10' maxlength='1' value='"+storedValue[6]+"' readonly><br>");
 				}
 			}
-			$('#load-records').hide();
 		}
 	});
 

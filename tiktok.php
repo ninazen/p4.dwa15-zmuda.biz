@@ -70,9 +70,9 @@
 
 				<h3>TO DO TODAY</h3>
 				    <div class="text_box">
-						<input type='text' size='5' maxlength='1' value='Unplan' readonly>
-						<input type='text' size='60' maxlength='60' value='Activity Name' readonly>
-			  			<input type='text' size='10' maxlength='1' value='Actual Poms' readonly><br>
+						<input type='text' class="title-text" size='5' maxlength='1' value='Unplan' readonly>
+						<input type='text' class="title-text" size='60' maxlength='60' value='Activity Name' readonly>
+			  			<input type='text' class="title-text" size='10' maxlength='1' value='Actual Poms' readonly><br><br>
 						<input type="button" class="button" id="load-todo" value="Load To Do List">
 					</div><br>
 
@@ -85,15 +85,19 @@
 			<div id="invent-form" class="invent-form azure_body">
 
 				<h3>ACTIVITY INVENTORY</h3>
+
+					<div align="center">
+						<input type="button" class="button" id="clear-storage" value="Erase ALL Activities"><br>
+					</div><br>
+
 				    <div class="text_box">
-						<input type='text' size='5' maxlength='1' value='Priority' readonly>
-						<input type='text' size='60' maxlength='60' value='Activity Name' readonly>
-			  			<input type='text' size='10' maxlength='1' value='Estim Poms' readonly>
-						<input type="button" class="button topright" id="clear-storage" value="Erase All Activities"><br>
+						<input type='text' class="title-text" size='5' maxlength='1' value='Priority' readonly>
+						<input type='text' class="title-text" size='60' maxlength='60' value='Activity Name' readonly>
+			  			<input type='text' class="title-text" size='10' maxlength='1' value='Estim Poms' readonly><br>
 						<input type='text' size='5' maxlength='1' id="activity-prio" value=''>
 						<input type='text' size='60' maxlength='60' id="activity-name" value=''>
 			  			<input type='text' size='10' maxlength='1' id="activity-estim" value='1'>
-						<input type="button" class="button" id="add-activity" value="Add to Inventory"><br>
+						<input type="button" class="button" id="add-activity" value="Add to Inventory"><br><br>
 						<input type="button" class="button" id="load-inventory" value="Load Saved Inventory">
 					</div><br>
 
@@ -106,11 +110,11 @@
 
 				<h3>RECORDS</h3>
 				    <div class="text_box">
-						<input type='text' size='5' maxlength='1' value='Priority' readonly>
-						<input type='text' size='5' maxlength='1' value='Unplan' readonly>
-						<input type='text' size='60' maxlength='60' value='Activity Name' readonly>
-			  			<input type='text' size='10' maxlength='1' value='Estim Poms' readonly>
-			  			<input type='text' size='10' maxlength='1' value='Actual Poms' readonly><br>
+						<input type='text' class="title-text" size='5' maxlength='1' value='Priority' readonly>
+						<input type='text' class="title-text" size='5' maxlength='1' value='Unplan' readonly>
+						<input type='text' class="title-text" size='60' maxlength='60' value='Activity Name' readonly>
+			  			<input type='text' class="title-text" size='10' maxlength='1' value='Estim Poms' readonly>
+			  			<input type='text' class="title-text" size='10' maxlength='1' value='Actual Poms' readonly><br><br>
 						<input type="button" class="button" id="load-records" value="Load Records">
 					</div><br>
 
@@ -177,28 +181,31 @@
 
 			<!-- Informational and quickjump buttons -->
 			<div class="form-buttons">
-				<input type="button" class="form-button-link" id="toDoLink" value="To Do">
 				<input type="button" class="form-button-link" id="inventLink" value="Inventory">
+				<input type="button" class="form-button-link" id="toDoLink" value="To Do">
 				<input type="button" class="form-button-link" id="recordsLink" value="Records">
 			</div>
 
 			<!-- Forms Pages - for To Do, Inventory, and Records -->
-			<div id="toDoInfoPage" class="form-page todo-page">
-				<div class="text-bold">To Do Today = urgent activities</div><br>
-				The To Do Today form lists activities that you plan to do today.<br><br>
-				<div class="text-italic">Double-click for the To Do form.</div>
-			</div>
-
 			<div id="inventInfoPage" class="form-page invent-page">
-				<div class="text-bold">Inventory = list of all activities</div><br>
-				The Activities Inventory is a comprehensive list of all activities you want to complete at some point.<br><br>
+				<div class="text-bold">Activity Inventory = activities list</div><br>
+				The Activities Inventory is a comprehensive list of all the activities you want to track. 
+				Move the urgent ones to the To Do list for completion each day.<br><br>
 				<div class="text-italic">Double-click for Inventory form.</div>
 			</div>
 
+			<div id="toDoInfoPage" class="form-page todo-page">
+				<div class="text-bold">To Do Today = urgent activities</div><br>
+				The To Do Today form lists activities that you plan to do today. 
+				Once completed, you move them to the Records form.<br><br>
+				<div class="text-italic">Double-click for the To Do form.</div>
+			</div>
+
 			<div id="recordsInfoPage" class="form-page records-page">
-				<div class="text-bold">Records = record-keeping</div><br>
-				Records forms are used to track completed activities.<br><br>
-				<div class="text-italic">Double-click for the Records form.</div>
+				<div class="text-bold">Records = completed activities</div><br>
+				Records forms are used to track completed activities. 
+				You can see your progress on your pomodoros.<br><br>
+				<div class="text-italic">Double-click for Records form.</div>
 			</div>
 		</div>
 
