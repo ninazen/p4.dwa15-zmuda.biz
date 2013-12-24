@@ -86,7 +86,7 @@
 
 				<h3>ACTIVITY INVENTORY</h3>
 
-					<div align="center">
+					<div class="center_button">
 						<input type="button" class="button" id="clear-storage" value="Erase ALL Activities"><br>
 					</div><br>
 
